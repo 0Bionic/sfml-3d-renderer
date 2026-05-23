@@ -14,6 +14,7 @@ find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System)
 add_executable(SFML3DRasterizer
     src/main.cpp
     src/Engine.cpp
+    src/Math.cpp
 )
 
 target_include_directories(SFML3DRasterizer

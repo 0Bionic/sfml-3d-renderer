@@ -1,5 +1,11 @@
 #include "Engine.hpp"
 
+namespace
+{
+constexpr unsigned int WindowWidth = 800;
+constexpr unsigned int WindowHeight = 600;
+}
+
 Engine::Engine()
     : projectedLines(sf::PrimitiveType::Lines)
 {
@@ -7,7 +13,7 @@ Engine::Engine()
 
 void Engine::init()
 {
-    window.create(sf::VideoMode({800, 600}), "SFML 3D Software Rasterizer");
+    window.create(sf::VideoMode({WindowWidth, WindowHeight}), "SFML 3D Software Rasterizer");
     window.setFramerateLimit(60);
 }
 
@@ -36,11 +42,13 @@ void Engine::run()
 void Engine::update(float deltaTime)
 {
     (void)deltaTime;
-    // TODO: Implement math.
+    projectedLines.clear();
+    // TODO: Implement engine update.
 }
 
 void Engine::render()
 {
     window.clear(sf::Color::Black);
+    window.draw(projectedLines);
     window.display();
 }
